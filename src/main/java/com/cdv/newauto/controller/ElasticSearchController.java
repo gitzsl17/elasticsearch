@@ -31,7 +31,7 @@ public class ElasticSearchController {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 		
-		GetResponse result = this.client.prepareGet("book", "novel", id).get();
+		GetResponse result = client.prepareGet("book", "novel", id).get();
 		
 		if (!result.isExists()) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);

@@ -15,10 +15,11 @@ public class ESConfig {
 
 	@Bean
 	public TransportClient client() throws Exception{
-		InetSocketTransportAddress node = new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9200);
+		InetSocketTransportAddress node = new InetSocketTransportAddress(InetAddress.getByName("192.168.8.169"), 9300);
 		
 		Settings settings = Settings.builder()
-				.put("cluster.name","wali")
+				.put("cluster.name","elasticsearch")
+				.put("client.transport.sniff",true)
 				.build();
 		TransportClient client = new PreBuiltTransportClient(settings);
 		
